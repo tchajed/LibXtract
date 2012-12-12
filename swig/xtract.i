@@ -25,9 +25,15 @@
 /* Helper functions */
 %inline %{
 
+    /* Cast a float* to a void* (for example, to pass as argv) */
     void *floata_to_voidp(float f[])
     {
         return (void *)f;
+    }
+
+    /* Index into f, returning &f[n] (or f + n). */
+    float *floata_index(float *f, int n) {
+        return f + n;
     }
 
     xtract_function_descriptor_t 
