@@ -62,7 +62,10 @@
         mf->filters = filters;
         
         return mf;
+    }
 
+    float **fft_tables(xtract_mel_filter *mel_filter) {
+      return mel_filter->filters;
     }
     
     /* Free a mel filterbank */
